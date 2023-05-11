@@ -7,5 +7,5 @@ import lombok.Getter;
 @Getter
 public class Vector {
     private int id;
-    private float[] values;
+    private double[] values;
 }

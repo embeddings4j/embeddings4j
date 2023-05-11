@@ -23,13 +23,13 @@ class InMemoryVectorDatabaseTest {
 
     @Test
     public void testSearchNearest() {
-        vectorDatabase.insert(new Vector(0, new float[]{1.0f, 2.0f, 3.0f}));
-        vectorDatabase.insert(new Vector(1, new float[]{4.0f, 5.0f, 6.0f}));
-        vectorDatabase.insert(new Vector(2, new float[]{7.0f, 8.0f, 9.0f}));
-        vectorDatabase.insert(new Vector(3, new float[]{9.0f, 11.0f, 12.0f}));
+        vectorDatabase.insert(new Vector(0, new double[]{1.0f, 2.0f, 3.0f}));
+        vectorDatabase.insert(new Vector(1, new double[]{4.0f, 5.0f, 6.0f}));
+        vectorDatabase.insert(new Vector(2, new double[]{7.0f, 8.0f, 9.0f}));
+        vectorDatabase.insert(new Vector(3, new double[]{9.0f, 11.0f, 12.0f}));
 
         VectorSearchQuery query = VectorSearchQuery.builder()
-                .targetVector(new Vector(4, new float[]{5.5f, 7.5f, 6.5f}))
+                .targetVector(new Vector(4, new double[]{5.5f, 7.5f, 6.5f}))
                 .numberResults(2)
                 .distanceThreshold(1000.0d)
                 .build();

@@ -38,11 +38,11 @@ public class InMemoryVectorDatabase implements VectorDatabase {
 
     private List<VectorSearchResult> convertToSearchResults(List<Integer> nearestNeighbors, VectorSearchQuery query) {
         List<VectorSearchResult> searchResults = new ArrayList<>();
-        float[] targetVectorValues = query.getTargetVector().getValues();
+        double[] targetVectorValues = query.getTargetVector().getValues();
 
         for (Integer index : nearestNeighbors) {
             Vector closestVector = vectorMap.get(index);
-            float[] closestVectorValues = closestVector.getValues();
+            double[] closestVectorValues = closestVector.getValues();
             double distance = computeDistance(targetVectorValues, closestVectorValues);
 
             if (distance <= query.getDistanceThreshold()) {
@@ -53,7 +53,7 @@ public class InMemoryVectorDatabase implements VectorDatabase {
         return searchResults;
     }
 
-    private double computeDistance(float[] vector1, float[] vector2) {
+    private double computeDistance(double[] vector1, double[] vector2) {
         double sum = 0;
         for (int i = 0; i < vector1.length; i++) {
             double diff = vector1[i] - vector2[i];

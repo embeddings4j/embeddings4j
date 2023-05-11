@@ -7,6 +7,6 @@ import lombok.Getter;
 @Getter
 public class VectorSearchResult {
     private int id;
-    private float[] values;
+    private double[] values;
     private double distance;
 }
