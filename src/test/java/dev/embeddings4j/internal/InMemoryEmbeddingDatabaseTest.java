@@ -2,7 +2,6 @@ package dev.embeddings4j.internal;
 
 import dev.embeddings4j.Embedding;
 import dev.embeddings4j.InMemoryFloatVectorDatabase;
-import dev.embeddings4j.InMemoryVectorDatabase;
 import dev.embeddings4j.VectorSearchQuery;
 import dev.embeddings4j.VectorSearchResult;
 import lombok.val;
