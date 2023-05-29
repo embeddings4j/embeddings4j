@@ -1,11 +1,14 @@
 package dev.embeddings4j;
 
+import java.util.Collection;
 import java.util.List;
 
-public interface VectorDatabase {
-    void insert(Vector vector);
+// TODO Store?
+public interface VectorDatabase<IdType, ContentType, VectorType> {
 
-    Vector get(int id);
+    void insert(Embedding<IdType, ContentType, VectorType> vector); // TODO add?
 
-    List<VectorSearchResult> searchNearest(VectorSearchQuery query);
+    void insertAll(Collection<Embedding<IdType, ContentType, VectorType>> vector) throws InterruptedException;
+
+    List<VectorSearchResult<IdType, ContentType, VectorType>> searchNearest(VectorSearchQuery<IdType, ContentType, VectorType> query);
 }

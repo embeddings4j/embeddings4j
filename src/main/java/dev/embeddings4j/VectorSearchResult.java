@@ -1,12 +1,10 @@
 package dev.embeddings4j;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Value;
 
-@AllArgsConstructor
-@Getter
-public class VectorSearchResult {
-    private int id;
-    private double[] values;
-    private double distance;
+@Value
+public class VectorSearchResult<IdType, ContentType, VectorType> {
+
+    Embedding<IdType, ContentType, VectorType> vector;
+    VectorType distance;
 }

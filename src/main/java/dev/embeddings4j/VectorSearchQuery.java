@@ -1,12 +1,12 @@
 package dev.embeddings4j;
 
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Value;
 
-@Getter
+@Value
 @Builder
-public class VectorSearchQuery {
-    private Vector targetVector;
-    private int numberResults;
-    private double distanceThreshold;
+public class VectorSearchQuery<IdType, ContentType, VectorType> {
+
+    Embedding<IdType, ContentType, VectorType> targetVector; // rename
+    Integer numberOfResults;
 }
