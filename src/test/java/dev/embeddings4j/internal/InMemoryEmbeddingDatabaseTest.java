@@ -1,6 +1,7 @@
 package dev.embeddings4j.internal;
 
 import dev.embeddings4j.Embedding;
+import dev.embeddings4j.InMemoryFloatVectorDatabase;
 import dev.embeddings4j.InMemoryVectorDatabase;
 import dev.embeddings4j.VectorSearchQuery;
 import dev.embeddings4j.VectorSearchResult;
@@ -16,11 +17,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class InMemoryEmbeddingDatabaseTest {
 
-    private InMemoryVectorDatabase vectorDatabase;
+    private InMemoryFloatVectorDatabase vectorDatabase;
 
     @BeforeEach
     public void setUp() {
-        vectorDatabase = new InMemoryVectorDatabase(2);
+        vectorDatabase = new InMemoryFloatVectorDatabase(2);
     }
 
     @Test
