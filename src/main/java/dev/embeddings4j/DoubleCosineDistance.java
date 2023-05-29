@@ -10,9 +10,9 @@ public class DoubleCosineDistance implements DistanceFunction<List<Double>, Doub
 
     @Override
     public Double distance(List<Double> u, List<Double> v) {
-        double dot = 0.0f;
-        double nru = 0.0f;
-        double nrv = 0.0f;
+        double dot = 0.0;
+        double nru = 0.0;
+        double nrv = 0.0;
         for (int i = 0; i < u.size(); i++) {
             dot += u.get(i) * v.get(i);
             nru += u.get(i) * u.get(i);
